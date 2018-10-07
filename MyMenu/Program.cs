@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace MyMenu
 {
@@ -6,7 +7,11 @@ namespace MyMenu
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Menu lists = new Menu();
+            Handler handler = new Handler();
+            lists.OnEnter += handler.Message;
+            lists.Show();
+            Console.ReadLine();
         }
     }
 }
